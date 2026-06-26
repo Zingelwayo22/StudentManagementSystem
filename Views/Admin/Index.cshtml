@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Admin Dashboard";
+}
+
+<h2>Admin Dashboard</h2>
+
+<hr />
+
+<div class="row">
+    <h2>Admin Dashboard</h2>
+
+    <hr />
+
+    <div class="row">
+
+        <div class="col-md-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Students</div>
+                <div class="panel-body">
+                    <h3>@ViewBag.StudentCount</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="panel panel-success">
+                <div class="panel-heading">Lecturers</div>
+                <div class="panel-body">
+                    <h3>@ViewBag.LecturerCount</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="panel panel-warning">
+                <div class="panel-heading">Modules</div>
+                <div class="panel-body">
+                    <h3>@ViewBag.ModuleCount</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">Enrollments</div>
+                <div class="panel-body">
+                    <h3>@ViewBag.EnrollmentCount</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Marks</div>
+                <div class="panel-body">
+                    <h3>@ViewBag.MarkCount</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Students</div>
+            <div class="panel-body">
+                <p>Manage all student accounts</p>
+                <a href="@Url.Action("Index","Student")" class="btn btn-primary">
+                    Manage Students
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-success">
+            <div class="panel-heading">Lecturers</div>
+            <div class="panel-body">
+                <p>Manage lecturer accounts</p>
+                <a href="@Url.Action("Index","Lecturer")" class="btn btn-success">
+                    Manage Lecturers
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-warning">
+            <div class="panel-heading">Modules</div>
+            <div class="panel-body">
+                <p>Manage modules/courses</p>
+                <a href="@Url.Action("Index","Module")"
+                   class="btn btn-warning">
+                    Manage Modules
+                </a>
+            </div>
+        </div>
+    </div>
+    <a href="@Url.Action("Index","Enrollment")"
+       class="btn btn-info">
+        Manage Enrollments
+    </a>
+</div>

@@ -1,0 +1,34 @@
+﻿@model StudentManagementSystem.Models.Module
+
+<h2>Edit Module</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.ModuleId)
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ModuleCode)
+        @Html.TextBoxFor(m => m.ModuleCode, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ModuleName)
+        @Html.TextBoxFor(m => m.ModuleName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Credits)
+        @Html.TextBoxFor(m => m.Credits, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Lecturer")
+        @Html.DropDownList("LecturerId", null, "-- Select Lecturer --", new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Save Changes
+    </button>
+}

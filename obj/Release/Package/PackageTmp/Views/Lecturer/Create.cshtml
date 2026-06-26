@@ -1,0 +1,29 @@
+﻿@model StudentManagementSystem.Models.Lecturer
+
+<h2>Create Lecturer</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <input type="text" name="StaffNumber" placeholder="Staff Number" class="form-control" />
+    <br />
+
+    <input type="text" name="FirstName" placeholder="First Name" class="form-control" />
+    <br />
+
+    <input type="text" name="LastName" placeholder="Last Name" class="form-control" />
+    <br />
+
+    <input type="email" name="Email" placeholder="Email" class="form-control" />
+    <br />
+
+    <input type="text" name="Phone" placeholder="Phone" class="form-control" />
+    <br />
+
+    <input type="password" name="Password" placeholder="Password" class="form-control" />
+    <br />
+
+    <button type="submit" class="btn btn-success">Save Lecturer</button>
+}
+

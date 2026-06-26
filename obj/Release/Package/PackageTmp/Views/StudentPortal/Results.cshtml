@@ -1,0 +1,32 @@
+﻿@model IEnumerable<StudentManagementSystem.Models.Mark>
+
+<h2>My Results</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Module</th>
+        <th>Mark</th>
+        <th>Status</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @item.Module.ModuleName
+            </td>
+
+            <td>
+                @item.Score %
+            </td>
+
+            <td>
+                @(item.Score >= 50 ? "PASS" : "FAIL")
+            </td>
+
+        </tr>
+    }
+
+</table>

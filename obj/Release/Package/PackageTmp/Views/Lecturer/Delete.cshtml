@@ -1,0 +1,22 @@
+﻿@model StudentManagementSystem.Models.Lecturer
+
+<h2>Delete Lecturer</h2>
+
+<h3>Are you sure you want to delete this lecturer?</h3>
+
+<p>
+    @Model.FirstName @Model.LastName
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <button type="submit" class="btn btn-danger">
+        Delete
+    </button>
+
+    <a href="@Url.Action("Index")" class="btn btn-default">
+        Cancel
+    </a>
+}

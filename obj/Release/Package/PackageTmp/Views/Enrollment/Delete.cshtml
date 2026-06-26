@@ -1,0 +1,23 @@
+﻿@model StudentManagementSystem.Models.Enrollment
+
+<h2>Delete Enrollment</h2>
+
+<h3>Are you sure you want to remove this enrollment?</h3>
+
+<p>
+    Student: @Model.Student.FirstName <br />
+    Module: @Model.Module.ModuleName
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <button type="submit" class="btn btn-danger">
+        Delete
+    </button>
+
+    <a href="@Url.Action("Index")" class="btn btn-default">
+        Cancel
+    </a>
+}

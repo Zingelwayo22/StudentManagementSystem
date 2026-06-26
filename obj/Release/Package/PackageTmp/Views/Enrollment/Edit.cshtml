@@ -1,0 +1,28 @@
+﻿@model StudentManagementSystem.Models.Enrollment
+
+<h2>Edit Enrollment</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(m => m.EnrollmentId)
+
+    <div class="form-group">
+        <label>Student</label>
+        @Html.DropDownListFor(m => m.StudentId,
+                 (SelectList)ViewBag.StudentId,
+                 new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Module</label>
+        @Html.DropDownListFor(m => m.ModuleId,
+                 (SelectList)ViewBag.ModuleId,
+                 new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-success">
+        Save Changes
+    </button>
+}

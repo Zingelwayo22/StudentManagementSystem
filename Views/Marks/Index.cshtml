@@ -1,0 +1,47 @@
+﻿@model IEnumerable<StudentManagementSystem.Models.Mark>
+
+<h2>Marks</h2>
+
+<p>
+    @Html.ActionLink(
+            "Capture Mark",
+            "Create",
+            null,
+            new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Student</th>
+        <th>Module</th>
+        <th>Score</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Student.FirstName
+                @item.Student.LastName
+            </td>
+
+            <td>
+                @item.Module.ModuleName
+            </td>
+
+            <td>
+                @item.Score
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MarkId }, new { @class = "btn btn-warning btn-sm" })
+
+                @Html.Raw(" ")
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.MarkId }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+    }
+
+</table>

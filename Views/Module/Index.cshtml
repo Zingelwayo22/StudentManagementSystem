@@ -1,0 +1,39 @@
+﻿@model IEnumerable<StudentManagementSystem.Models.Module>
+
+<h2>Modules</h2>
+
+<p>
+    @Html.ActionLink("Add Module", "Create", null,
+            new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Credits</th>
+        <th>Lecturer</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ModuleCode</td>
+            <td>@item.ModuleName</td>
+            <td>@item.Credits</td>
+            <td>
+                @(item.Lecturer != null
+        ? item.Lecturer.FirstName + " " + item.Lecturer.LastName
+        : "Not Assigned")
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ModuleId }, new { @class = "btn btn-warning btn-sm" })
+
+                @Html.Raw(" ")
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.ModuleId }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+    }
+</table>

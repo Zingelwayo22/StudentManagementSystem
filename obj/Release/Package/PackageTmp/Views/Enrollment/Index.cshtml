@@ -1,0 +1,43 @@
+﻿@model IEnumerable<StudentManagementSystem.Models.Enrollment>
+
+<h2>Enrollments</h2>
+
+<p>
+    @Html.ActionLink(
+            "Enroll Student",
+            "Create",
+            null,
+            new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Student</th>
+        <th>Module</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Student.FirstName
+                @item.Student.LastName
+            </td>
+
+            <td>
+                @item.Module.ModuleName
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentId }, new { @class = "btn btn-warning btn-sm" })
+
+                @Html.Raw(" ")
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentId }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+    }
+
+</table> 

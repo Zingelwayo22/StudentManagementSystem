@@ -1,0 +1,40 @@
+﻿@model StudentManagementSystem.Models.Module
+
+<h2>Create Module</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label>Module Code</label>
+        @Html.TextBoxFor(m => m.ModuleCode,
+                      new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Module Name</label>
+        @Html.TextBoxFor(m => m.ModuleName,
+                      new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Credits</label>
+        @Html.TextBoxFor(m => m.Credits,
+                      new { @class = "form-control" })
+    </div>
+
+    <br />
+    <div class="form-group">
+        <label>Lecturer</label>
+
+        @Html.DropDownListFor(
+                m => m.LecturerId,
+                (SelectList)ViewBag.LecturerId,
+                "-- Select Lecturer --",
+                new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">
+        Save Module
+    </button>
+}

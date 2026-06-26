@@ -1,0 +1,64 @@
+﻿<h2>Lecturer Dashboard</h2>
+
+<div class="row">
+
+    <div class="col-md-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Modules Enrolled</div>
+            <div class="panel-body">
+                <h2>@ViewBag.ModuleCount</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-info">
+            <div class="panel-heading">Marks Captured</div>
+            <div class="panel-body">
+                <h2>@ViewBag.MarksCount</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">Average Score</div>
+            <div class="panel-body">
+                <h2>@ViewBag.AverageScore %</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-warning">
+            <div class="panel-heading">Academic Status</div>
+            <div class="panel-body">
+                <h3>@ViewBag.Status</h3>
+            </div>
+        </div>
+    </div>
+    <h3>My Modules</h3>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Module</th>
+            <th>Enrolled Students</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in ViewBag.ModuleData)
+        {
+            <tr>
+                <td>@item.ModuleName</td>
+                <td>@item.StudentCount</td>
+                <td>
+                    <a href="@Url.Action("ModuleStudents", "Lecturer", new { id = item.ModuleId })"
+                       class="btn btn-info">
+                        Manage Marks
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>

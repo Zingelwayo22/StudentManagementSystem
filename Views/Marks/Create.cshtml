@@ -1,0 +1,43 @@
+﻿@model StudentManagementSystem.Models.Mark
+
+<h2>Capture Mark</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label>Student</label>
+
+        @Html.DropDownListFor(
+                 m => m.StudentId,
+                 (SelectList)ViewBag.StudentId,
+                 "-- Select Student --",
+                 new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Module</label>
+
+        @Html.DropDownListFor(
+                 m => m.ModuleId,
+                 (SelectList)ViewBag.ModuleId,
+                 "-- Select Module --",
+                 new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Mark</label>
+
+        @Html.TextBoxFor(
+                 m => m.Score,
+                 new { @class = "form-control" })
+    </div>
+
+    <br />
+
+    <button type="submit"
+            class="btn btn-success">
+        Save Mark
+    </button>
+}

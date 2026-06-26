@@ -1,0 +1,22 @@
+﻿@model StudentManagementSystem.Models.Mark
+
+<h2>Delete Mark</h2>
+
+<h3>Are you sure?</h3>
+
+<p>
+    Student: @Model.Student.FirstName <br />
+    Module: @Model.Module.ModuleName <br />
+    Score: @Model.Score
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <button type="submit" class="btn btn-danger">
+        Delete
+    </button>
+
+    <a href="@Url.Action("Index")" class="btn btn-default">Cancel</a>
+}

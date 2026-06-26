@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Lecturer Dashboard";
+}
+
+<h2>Lecturer Dashboard</h2>
+
+<hr />
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <h4 class="panel-heading">My Modules</h4>
+            <div class="panel-body">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-success">
+            <h4 class="panel-heading">Enrolled Students</h4>
+            <div class="panel-body">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="panel panel-warning">
+            <h4 class="panel-heading"> Manage Marks</h4>
+            <div class="panel-body">
+                <a href="@Url.Action("Index","Marks")"
+                   class="btn btn-danger">
+                    Capture Marks
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
